@@ -24,7 +24,7 @@ const nextQuestion = () => {
   rl.question(surveyQuestions.shift(), answer => {
     //use shift to remove and return first element of array.
     surveyAnswers.push(answer);
-    if(surveyQuestions.length === 0) { //after shift has emptied array, it will close this loop
+    if (surveyQuestions.length === 0) { //after shift has emptied array, it will close this loop
       rl.close();
     } else {
       nextQuestion(); //if array still has contents (!== 0), use recursion to run again.
@@ -36,13 +36,13 @@ nextQuestion();
 
 rl.on('close', () => {
   surveyAnswers = {
-    name : surveyAnswers[0],
-    favActivity : surveyAnswers[1],
-    favGenre : surveyAnswers[2],
-    favMeal : surveyAnswers[3],
-    favFood : surveyAnswers[4],
-    favSport : surveyAnswers[5],
-    superpower : surveyAnswers[6]
+    name: surveyAnswers[0],
+    favActivity: surveyAnswers[1],
+    favGenre: surveyAnswers[2],
+    favMeal: surveyAnswers[3],
+    favFood: surveyAnswers[4],
+    favSport: surveyAnswers[5],
+    superpower: surveyAnswers[6]
   };
 
   let profile = `My name is ${surveyAnswers.name} and my favorite activity is ${surveyAnswers.favActivity}! My favorite type of music to listen to while doing that is ${surveyAnswers.favGenre}. My favorite meal of the day is ${surveyAnswers.favMeal} and I love having ${surveyAnswers.favFood} for it! I love playing ${surveyAnswers.favSport} above all else and my superpower is ${surveyAnswers.superpower}.`;
